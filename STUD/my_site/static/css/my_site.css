@@ -1,0 +1,41 @@
+h1 {
+    color: orange;
+    font-family: 'Lobster';
+}
+
+footer {
+    position: fixed; /* Фиксируем подвал */
+    bottom: 0; /* Прижимаем к низу */
+    left: 0;
+    width: 100%; 
+    padding: 20px 20px 20px 40px;
+    background-color: darkslateblue;
+
+}
+
+header {
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+    background-color: darkslateblue;
+
+}
+
+content {
+    margin-left: 40px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}

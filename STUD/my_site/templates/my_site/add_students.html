@@ -1,0 +1,26 @@
+{% extends 'my_site/base.html' %}
+
+{% block title %}
+    <title>Добавление записи в таблицу Студенты</title>
+{% endblock %}
+
+{% block header %}
+    <h1>Добавление записи в таблицу Студенты</h1>    
+{% endblock %}
+
+{% block content %}
+
+    <body>
+        <content>
+            <div>
+                <h1>Добавленить студента</h1>
+                <form method = "POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Добавить</button>
+                </form>
+            </div>
+        </content>
+        
+    </body>
+{% endblock %}

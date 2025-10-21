@@ -1,0 +1,22 @@
+{% extends 'my_site/base.html' %}
+
+{% block title %}
+    <title>Список студентов</title>
+{% endblock %}
+
+{% block header %}
+    <h1>Список студентов</h1>    
+{% endblock %}
+
+{% block content %}
+    <body>
+        <content>
+            <ol>
+                {% for student in students %}
+                    <li>{{student.first_name }} {{ student.last_name }}, {{ student.group }}</li>
+                {% endfor %}
+            </ol>
+        </content>
+        
+    </body>
+{% endblock %}
