@@ -25,9 +25,24 @@
                 <li><a href="{% url 'about' %}">О нас</a></li>
                 <li><a href="{% url 'services' %}">Услуги</a></li>
                 <li><a href="{% url 'contacts' %}">Контакты</a></li>
-                <li><a href="{% url 'add_student' %}">Добавленить студента</a></li>
-                <li><a href="{% url 'students_list' %}">Список студентов</a></li>
-                <li><a href="{% url 'admin:index' %}">АДмин-панель</a></li>
+                
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'profile' %}">Профиль</a></li>
+                    
+                    {% if user.is_admin_property or user.is_teacher_property %}
+                        <li><a href="{% url 'add_student' %}">Добавить студента</a></li>
+                        <li><a href="{% url 'students_list' %}">Список студентов</a></li>
+                    {% endif %}
+                    
+                    {% if user.is_admin_property %}
+                        <li><a href="{% url 'admin:index' %}">Админ-панель</a></li>
+                    {% endif %}
+                    
+                    <li><a href="{% url 'logout' %}">Выйти</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Войти</a></li>
+                    <li><a href="{% url 'register' %}">Регистрация</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>
